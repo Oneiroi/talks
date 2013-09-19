@@ -1,0 +1,10 @@
+---
+# file: roles/httpd/tasks/main.yml
+
+- name: install httpd
+  yum: name=httpd
+  sudo: yes
+  notify:
+    - restart httpd
+  tags:
+    - httpd

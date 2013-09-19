@@ -1,0 +1,6 @@
+---
+# file: roles/https/handlers/main.yml
+- name: restart httpd
+  service: name=httpd state=restarted
+  sudo: yes
+...

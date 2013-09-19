@@ -1,0 +1,6 @@
+---
+# file: roles/mysqld/handlers/main.yml
+- name: restart mysqld
+  service: name=mysqld state=restarted
+  sudo: yes
+...

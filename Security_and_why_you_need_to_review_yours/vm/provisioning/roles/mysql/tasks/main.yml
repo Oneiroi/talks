@@ -1,0 +1,14 @@
+---
+# file: roles/mysqld/tasks/main.yml
+
+- name: install mysql-server
+  yum: name=mysql-server
+  sudo: yes
+  notify:
+    - restart mysqld
+  tags:
+    - mysqld
+
+- name: install mysql
+  sudo: yes
+  yum: name=mysql
