@@ -4,7 +4,12 @@
 - name: install httpd
   yum: name=httpd
   sudo: yes
-  notify:
-    - restart httpd
   tags:
     - httpd
+
+- name: ensure apache is running
+  service: name=httpd state=started
+  sudo: yes
+  tags:
+    - httpd
+

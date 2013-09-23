@@ -4,11 +4,17 @@
 - name: install mysql-server
   yum: name=mysql-server
   sudo: yes
-  notify:
-    - restart mysqld
+  tags:
+    - mysqld
+
+- name: ensure mysqld is running
+  service: name=mysqld state=started
+  sudo: yes
   tags:
     - mysqld
 
 - name: install mysql
   sudo: yes
   yum: name=mysql
+  tags:
+    - mysqld

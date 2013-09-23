@@ -1,0 +1,20 @@
+---
+# file: roles/iptables/tasks/main.yml
+- name: install iptables
+  yum: name=iptables
+  sudo: yes
+  tags:
+    - iptables
+
+- name: ensure iptables is running
+  service: name=iptables state=started
+  sudo: yes
+  tags:
+
+- name: install sysconfig/iptables
+  copy: src=../files/iptables dest=/etc/sysconfig/ owner=root mode=600
+  notify:
+    - restart iptables
+  sudo: yes
+  tags:
+      - iptables

@@ -1,0 +1,15 @@
+---
+# file: roles/vuln_webapp/tasks/main.yml
+
+- name: install php
+  yum: name=php
+  sudo: yes
+  notify:
+    - restart httpd
+  tags:
+    - vuln_webapp
+- name: install php file
+  copy: src={{ item }} dest=/var/www/html/ owner=root mode=644
+  with_fileglob:
+          - ../files/*.php
+  sudo: yes

@@ -1,6 +1,8 @@
 ---
 - hosts: all
   roles:
+    - iptables
     - httpd
     - mysql
+    - vuln_webapp
 
