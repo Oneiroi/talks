@@ -13,8 +13,14 @@
   tags:
     - selinux
 
+- name: install dbus
+  yum: name=dbus
+  sudo: yes
+  tags:
+    - selinux
+
 - name: ensure messagebus is running
-  service: name=messagebus state=sarted
+  service: name=messagebus state=started
   sudo: yes
   tags:
     - selinux
