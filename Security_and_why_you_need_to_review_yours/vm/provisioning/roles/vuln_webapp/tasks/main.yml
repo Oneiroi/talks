@@ -1,6 +1,8 @@
 ---
 # file: roles/vuln_webapp/tasks/main.yml
 
+#copy: src=../files/iptables dest=/etc/sysconfig/iptables owner=root group=root mode=600 seuser=system_u serole=object_r setype=system_conf_t selevel=s0
+
 - name: install php
   yum: name=php
   sudo: yes
@@ -8,8 +10,18 @@
     - restart httpd
   tags:
     - vuln_webapp
+
+  #system_u:object_r:httpd_sys_rw_content_t:s0
+- name: vulnerable webapp dir
+  file: dest=/var/www/html/vuln_webapp owner=apache group=apache mode=755 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0 state=directory
+  sudo: yes
+  tags:
+    - vuln_webapp
+
 - name: install php file
-  copy: src={{ item }} dest=/var/www/html/ owner=root mode=644
+  copy: src={{ item }} dest=/var/www/html/vuln_webapp owner=apache group=apache mode=644 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0
   with_fileglob:
           - ../files/*.php
   sudo: yes
+  tags:
+    - vuln_webapp

