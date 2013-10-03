@@ -13,15 +13,10 @@
     - iptables
 
 - name: install sysconfig/iptables
-  copy: src=../files/iptables dest=/etc/sysconfig/iptables
+  copy: src=../files/iptables dest=/etc/sysconfig/iptables owner=root group=root mode=600 seuser=system_u serole=object_r setype=system_conf_t selevel=s0
   sudo: yes
+  notify:
+    - restart iptables
   tags:
     - iptables
 
-- name: posix and secontexts sysconfig/iptables
-  file: dest=/etc/sysconfig/iptables owner=root mode=600 seuser=system_u serole=object_r setype=system_conf_t selevel=s0 state=file
-  notify:
-    - restart iptables
-  sudo: yes
-  tags:
-      - iptables
