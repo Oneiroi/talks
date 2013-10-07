@@ -118,6 +118,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.validation_client_name = "ORGNAME-validator"
 
   config.vm.provision "ansible" do |ansible|
+    #ansible.verbose = "vvv"
     ansible.inventory_path = "provisioning/hosts"
     ansible.playbook = "provisioning/playbook.yml"
   end

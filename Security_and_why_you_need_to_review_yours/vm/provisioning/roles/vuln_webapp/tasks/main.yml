@@ -40,6 +40,11 @@
   tags:
     - vuln_webapp
 
+- name: create vuln_webapp schema
+  mysql_db: name=vuln_webapp state=present
+  tags:
+    - vuln_webapp
+
 - name: deploy vuln_webapp schema
   mysql_db: name=vuln_webapp target=/var/www/html/vuln_webapp/schema.sql state=import
   tags:
