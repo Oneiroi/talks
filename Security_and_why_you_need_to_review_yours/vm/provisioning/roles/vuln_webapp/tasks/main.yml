@@ -40,7 +40,8 @@
   yum: name=MySQL-python
   sudo: yes
   tags:
-    - vuln_webapp
+  tags:
+    - vuln_webapp_mysql
   
 - name: deploy really bad grant
   mysql_user: name=vuln_webapp password=pluk priv=*.*:ALL state=present

@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.define "web1" do |webserver|
     webserver.vm.box = "CentOS6_x64"
       webserver.vm.network :private_network, ip: "172.16.33.2"
+      webserver.vm.network "forwarded_port", guest: 80, host: 8001
       webserver.vm.provider :virtualbox do |vb|
           vb.gui = true
           vb.customize ["modifyvm", :id, "--memory", "1024"]
@@ -18,6 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       webserver.vm.provision "ansible" do |ansible|
         #ansible.verbose = "vvv"
         ansible.limit = "web1"
+        ansible.extra_vars = { setenforce: "1" }
         ansible.tags  = ["selinux", "httpd", "vuln_webapp", "iptables"] 
         ansible.inventory_path = "provisioning/hosts"
         ansible.playbook = "provisioning/playbook.yml"
@@ -34,7 +36,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       dbserver.vm.provision "ansible" do |ansible|
         #ansible.verbose = "vvv"
         ansible.limit = "db1"
-        ansible.tags  = ["selinux", "mysqld", "iptables"] 
+        ansible.extra_vars = { setenforce: "1" }
+        ansible.tags  = ["selinux", "mysqld", "iptables", "vuln_webapp_mysql"] 
         ansible.inventory_path = "provisioning/hosts"
         ansible.playbook = "provisioning/playbook.yml"
       end

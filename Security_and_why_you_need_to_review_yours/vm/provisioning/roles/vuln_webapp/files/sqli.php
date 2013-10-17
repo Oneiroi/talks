@@ -1,7 +1,7 @@
 <pre>
 <?PHP
 $conn = mysql_connect(
-    'localhost',
+    '172.16.33.3',
     'vuln_webapp',
     'pluk') or die('MySQL connection failed '.mysql_error());
 mysql_select_db('vuln_webapp');
