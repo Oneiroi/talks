@@ -1,2 +1,5 @@
-[vagrant]
-172.16.33.2
+[webservers]
+web1 ansible_ssh_host=172.16.33.2
+
+[dbservers]
+db1 ansible_ssh_host=172.16.33.3

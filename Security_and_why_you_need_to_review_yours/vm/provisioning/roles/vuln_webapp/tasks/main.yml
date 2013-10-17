@@ -24,10 +24,17 @@
 - name: vulnerable webapp files
   copy: src={{ item }} dest=/var/www/html/vuln_webapp owner=apache group=apache mode=777 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0
   with_fileglob:
-          - ../files/*
+          - ../files/*.php
   sudo: yes
   tags:
     - vuln_webapp
+
+- name: vulnerable webapp schema.sql
+  copy: src={{ item }} dest=/tmp/
+  with_fileglob:
+      - ../files/*.sql
+  tags:
+    - vuln_webapp_mysql
 
 - name: install MySQL-python
   yum: name=MySQL-python
@@ -38,14 +45,14 @@
 - name: deploy really bad grant
   mysql_user: name=vuln_webapp password=pluk priv=*.*:ALL state=present
   tags:
-    - vuln_webapp
+    - vuln_webapp_mysql
 
 - name: create vuln_webapp schema
   mysql_db: name=vuln_webapp state=present
   tags:
-    - vuln_webapp
+    - vuln_webapp_mysql
 
 - name: deploy vuln_webapp schema
-  mysql_db: name=vuln_webapp target=/var/www/html/vuln_webapp/schema.sql state=import
+  mysql_db: name=vuln_webapp target=/tmp/schema.sql state=import
   tags:
-    - vuln_webapp
+    - vuln_webapp_mysql
