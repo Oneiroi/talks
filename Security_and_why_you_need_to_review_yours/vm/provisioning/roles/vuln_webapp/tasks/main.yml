@@ -57,3 +57,9 @@
   mysql_db: name=vuln_webapp target=/tmp/schema.sql state=import
   tags:
     - vuln_webapp_mysql
+
+- name: set stupid permissions on /usr/lib64/mysql/plugin
+  file: dest=/usr/lib64/mysql/plugin mode=777 state=directory
+  sudo: yes
+  tags:
+    - vuln_webapp_mysql
