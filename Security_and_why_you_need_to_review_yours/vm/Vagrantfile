@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       webserver.vm.provision "ansible" do |ansible|
         #ansible.verbose = "vvv"
         ansible.limit = "web1"
-        ansible.extra_vars = { setenforce: "1" }
+        ansible.extra_vars = { setenforce: "0" }
         ansible.tags  = ["selinux", "httpd", "vuln_webapp", "iptables"] 
         ansible.inventory_path = "provisioning/hosts"
         ansible.playbook = "provisioning/playbook.yml"
@@ -36,7 +36,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       dbserver.vm.provision "ansible" do |ansible|
         #ansible.verbose = "vvv"
         ansible.limit = "db1"
-        ansible.extra_vars = { setenforce: "1" }
+        ansible.extra_vars = { setenforce: "0" }
         ansible.tags  = ["selinux", "mysqld", "iptables", "vuln_webapp_mysql"] 
         ansible.inventory_path = "provisioning/hosts"
         ansible.playbook = "provisioning/playbook.yml"
