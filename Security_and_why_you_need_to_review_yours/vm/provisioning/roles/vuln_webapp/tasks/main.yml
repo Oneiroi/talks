@@ -29,6 +29,12 @@
   tags:
     - vuln_webapp
 
+- name: webapp mysql client
+  yum: name=mysql
+  sudo: yes
+  tags:
+    - vuln_webapp
+
 - name: vulnerable webapp schema.sql
   copy: src={{ item }} dest=/tmp/
   with_fileglob:
@@ -39,7 +45,6 @@
 - name: install MySQL-python
   yum: name=MySQL-python
   sudo: yes
-  tags:
   tags:
     - vuln_webapp_mysql
   
