@@ -1,7 +1,7 @@
 Security and why you need to review yours
 =========================================
 
-Talk first given at Percona Live UK 2013, contains files and scripts relavant to the talk.
+Talk first given at `Percona Live UK 2013 <http://slidesha.re/1dl3LoY>`_, contains files and scripts relavant to the talk.
 
 Disclaimer
 ==========
