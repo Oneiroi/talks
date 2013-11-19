@@ -1,4 +1,5 @@
 ---
+#Copyright 2013 Percona LLC / David Busby
 # file: roles/mysqld/handlers/main.yml
 - name: restart mysqld
   service: name=mysqld state=restarted

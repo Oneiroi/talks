@@ -4,6 +4,7 @@
 # Quick and nasty "repeatable compromise" script
 # PLUK13 Security talk
 # David Busby <david.busby@percona.com>
+# Copyright 2013 Percona LLC / David Busby
 #
 
 vuln_webapp="http://172.16.33.2/vuln_webapp"

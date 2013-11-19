@@ -1,4 +1,5 @@
 ---
+#Copyright 2013 Percona LLC / David Busby
 # file: roles/iptables/tasks/main.yml
 - name: install iptables
   yum: name=iptables

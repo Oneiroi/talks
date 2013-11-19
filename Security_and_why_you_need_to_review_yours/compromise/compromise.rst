@@ -1,3 +1,5 @@
+.. Copyright 2013 Percona LLC / David Busby
+
 #. ensure iptables on laptop is open to receive reverse shells.
    #. sudo iptables -I INPUT -p tcp --dport 11457 -j ACCEPT
    #. sudo iptables -I INPUT -p tcp --dport 11458 -j ACCEPT

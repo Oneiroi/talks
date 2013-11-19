@@ -1,5 +1,6 @@
 <pre>
 <?PHP
+#Copyright 2013 Percona LLC / David Busby
 $conn = mysql_connect(
     '172.16.33.3',
     'vuln_webapp',

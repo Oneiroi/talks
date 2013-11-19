@@ -1,4 +1,5 @@
 ---
+#Copyright 2013 Percona LLC / David Busby
 # file: roles/mysqld/tasks/main.yml
 
 - name: install mysql-server

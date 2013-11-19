@@ -1,3 +1,4 @@
+-- Copyright 2013 Percona LLC / David Busby
 -- MySQL dump 10.13  Distrib 5.1.69, for redhat-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: vuln_schema

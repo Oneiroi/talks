@@ -1,4 +1,5 @@
 ---
+#Copyright 2013 Percona LLC / David Busby
 # file: roles/vuln_webapp/tasks/main.yml
 
 #copy: src=../files/iptables dest=/etc/sysconfig/iptables owner=root group=root mode=600 seuser=system_u serole=object_r setype=system_conf_t selevel=s0
