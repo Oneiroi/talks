@@ -11,3 +11,4 @@ Remit
 =====
 
 The sources provided will allow you to recreate the live demos carried out at the talk; if this does not work for any reason please file a bug report `issue <https://github.com/Oneiroi/talks/issues/new>`.
+
