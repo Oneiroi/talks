@@ -41,7 +41,7 @@
     - restart auditd
 
 - name: setenforce
-  command: setenforce $setenforce
+  command: setenforce {{ setenforce }}
   sudo: yes
   tags:
     - selinux
