@@ -9,6 +9,7 @@
   with_items:
     - php
     - php-mysql
+    - php-gd
   sudo: yes
   notify:
     - restart httpd
@@ -26,6 +27,14 @@
   copy: src={{ item }} dest=/var/www/html/vuln_webapp owner=apache group=apache mode=777 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0
   with_fileglob:
           - ../files/*.php
+  sudo: yes
+  tags:
+    - vuln_webapp
+
+- name: dvwa files copy
+  copy: src={{ item }} dest=/var/www/html/vuln_webapp owner=apache group=apache mode=777 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0
+  with_items:
+    - ../files/dvwa
   sudo: yes
   tags:
     - vuln_webapp
