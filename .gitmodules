@@ -1,3 +1,6 @@
 [submodule "Security_and_why_you_need_to_review_yours/selinux/sqlmap"]
 	path = Security_and_why_you_need_to_review_yours/selinux/sqlmap
 	url = git@github.com:sqlmapproject/sqlmap.git
+[submodule "submodules/PenTesting"]
+	path = submodules/PenTesting
+	url = https://github.com/Oneiroi/PenTesting.git
