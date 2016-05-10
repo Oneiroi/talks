@@ -2,6 +2,7 @@ Security and why you need to review yours
 =========================================
 
 Talk first given at `Percona Live UK 2013 <http://slidesha.re/1dl3LoY>`_, contains files and scripts relavant to the talk.
+Also given at `Percona Live 2016 `
 
 Disclaimer
 ==========
@@ -9,15 +10,10 @@ Disclaimer
 #. All authored code and scripts are provided under GPLv3 unless otherwise noted.
 #. All code is provided "As is" and without any warranty.
 #. You use this code at your own risk.
+#. You will have to edit the code...
 
-Agenda
+Videos
 ======
 
-#. Why password complexity is important.
-#. Why rigid grants are important.
-#. SELinux: why you should be using it.
-#. What’s an “attack surface” and how to limit it.
-#. What's a CVE and why should you care?
-#. 0-days, and F.U.D
-#. 5.6 Security features
-#. Q&A
+`PLMCE Compromise - metasploit && msfvenom <https://www.youtube.com/watch?v=e29kbX-rx0s>`_
+`PLUK 13 compromise - r57 shell <https://www.youtube.com/watch?v=XTG7fWKrygE>`_

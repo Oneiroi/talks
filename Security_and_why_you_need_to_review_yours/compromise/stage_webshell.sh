@@ -7,6 +7,8 @@
 # Copyright 2013 Percona LLC / David Busby
 #
 
+echo "RUH RO, I'm disabled!" && exit 1;
+
 vuln_webapp="http://172.16.33.2/vuln_webapp"
 #get the PWD (webdir) we're running in
 echo "Phase 1 - Information gathering"
