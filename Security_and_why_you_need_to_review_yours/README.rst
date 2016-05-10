@@ -9,8 +9,10 @@ Disclaimer
 
 #. All authored code and scripts are provided under GPLv3 unless otherwise noted.
 #. All code is provided "As is" and without any warranty.
-#. You use this code at your own risk.
-#. You will have to edit the code...
+#. You use this code at your *own risk*.
+#. You will have to edit the code 
+#. You agree to *ONLY* use the code against the VMs generated through vagrant
+#. By cloning / using this code you agree to all the terms and conditions layed out above
 
 Videos
 ======
