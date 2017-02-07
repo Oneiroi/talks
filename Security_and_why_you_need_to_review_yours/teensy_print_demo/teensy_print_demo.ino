@@ -1,6 +1,6 @@
 /* Simple USB Keyboard Example
    Used to demonstrate Teensy duino as a keyboard at Percona Live 2014
-   Author: Daivd Busby <david.busby@percona.com>
+   Author: David Busby <david.busby@percona.com>
    Copyright: Copyright 2014 Percona LLC
 */
 
