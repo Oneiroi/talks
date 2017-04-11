@@ -4,37 +4,37 @@
 
 - name: install libselinux-python
   yum: name=libselinux-python
-  sudo: yes
+  become: yes
   tags:
     - selinux
 
 - name: install audit 
   yum: name=audit
-  sudo: yes
+  become: yes
   tags:
     - selinux
 
 - name: install dbus
   yum: name=dbus
-  sudo: yes
+  become: yes
   tags:
     - selinux
 
 - name: ensure messagebus is running
   service: name=messagebus state=started
-  sudo: yes
+  become: yes
   tags:
     - selinux
 
 - name: ensure auditd is running
   service: name=auditd state=started
-  sudo: yes
+  become: yes
   tags:
     - selinux
 
 - name: install setroubleshoot-server
   yum: name=setroubleshoot-server
-  sudo: yes
+  become: yes
   tags:
     - selinux
   notify:
@@ -42,7 +42,7 @@
 
 - name: setenforce
   command: setenforce {{ setenforce }}
-  sudo: yes
+  become: yes
   tags:
     - selinux
 

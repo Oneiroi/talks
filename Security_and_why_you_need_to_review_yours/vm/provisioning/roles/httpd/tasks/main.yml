@@ -4,13 +4,13 @@
 
 - name: install httpd
   yum: name=httpd
-  sudo: yes
+  become: yes
   tags:
     - httpd
 
 - name: ensure apache is running
   service: name=httpd state=started
-  sudo: yes
+  become: yes
   tags:
     - httpd
 
