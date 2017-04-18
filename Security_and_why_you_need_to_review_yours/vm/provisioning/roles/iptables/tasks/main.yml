@@ -3,19 +3,19 @@
 # file: roles/iptables/tasks/main.yml
 - name: install iptables
   yum: name=iptables
-  sudo: yes
+  become: yes
   tags:
     - iptables
 
 - name: ensure iptables is running
   service: name=iptables state=started
-  sudo: yes
+  become: yes
   tags:
     - iptables
 
 - name: install sysconfig/iptables
   template: src=../files/iptables.j2 dest=/etc/sysconfig/iptables owner=root group=root mode=600 seuser=system_u serole=object_r setype=system_conf_t selevel=s0
-  sudo: yes
+  become: yes
   notify:
     - restart iptables
   tags:
