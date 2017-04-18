@@ -32,13 +32,13 @@
   tags:
     - selinux
 
-- name: install setroubleshoot-server
-  yum: name=setroubleshoot-server
-  become: yes
-  tags:
-    - selinux
-  notify:
-    - restart auditd
+      #- name: install setroubleshoot-server
+      #yum: name=setroubleshoot-server
+      #become: yes
+      #tags:
+      #- selinux
+      #notify:
+      #- restart auditd
 
 - name: setenforce
   command: setenforce {{ setenforce }}
