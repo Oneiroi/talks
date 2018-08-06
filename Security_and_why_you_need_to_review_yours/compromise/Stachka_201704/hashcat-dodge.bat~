@@ -1,0 +1,3 @@
+@ECHO OFF
+Powershell.exe -Command "& ./hashcat-demo.ps1"
+PAUSE
