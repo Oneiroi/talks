@@ -1,0 +1,1 @@
+../Stachka_201704/hashcat-demo.ps1
