@@ -2,9 +2,8 @@
 
 #
 # Quick and nasty "repeatable compromise" script
-# PLUK13 Security talk (PLMCE 14,15,16)
-# David Busby <david.busby@percona.com>
-# Copyright 2013 Percona LLC / David Busby
+# PLUK13 Security talk (PLMCE 14,15,16), Stachka 2017
+# David Busby <onerioi@fedoraproject.org>
 #
 
 #echo "RUH RO, I'm disabled!" && exit 1;
