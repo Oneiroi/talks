@@ -3,10 +3,9 @@
 #
 # Quick and nasty "repeatable compromise" script
 # PLUK13 Security talk
-# David Busby <david.busby@percona.com>
-# Copyright 2013 Percona LLC / David Busby
+# David Busby <oneiroi@fedoraproject.org>
 #
-echo "RUH RU, I'm disabled" && exit 1;
+echo "RUH ROH, I'm disabled" && exit 1;
 
 vuln_webapp="http://172.16.33.2/vuln_webapp"
 echo "Phase 1 - Information gathering"
