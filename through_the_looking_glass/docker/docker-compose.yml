@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  apache:
+    build: './containers/apache'
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+    #Apache should be reachable from the internet, and be able to connect to the CHD database
+      - frontend
+      - backend
+    volumes:
+      - ./public_html:/usr/local/apache2/htdocs
+      - ./cert/:/usr/local/apache2/cert/
+    depends_on:
+      - php
+      - mysql
+  php:
+    build: './containers/php'
+    restart: always
+    networks:
+    #Application should only be able to connect to the backened CHD network
+      - backend
+    volumes:
+      - ./public_html:/usr/local/apache2/htdocs
+      - ./tmp:/usr/local/tmp
+  mysql:
+    build: './containers/mysql'
+    restart: always
+    networks:
+    #DB must ALWAYS be in the isolated backened network, and never directly rechable
+      - backend
+    volumes:
+      - ./dba_plugins:/usr/lib/mysql/plugin:rw
+networks: 
+  backend:
+  frontend:
