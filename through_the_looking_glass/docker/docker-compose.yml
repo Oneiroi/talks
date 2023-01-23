@@ -33,7 +33,7 @@ services:
     #DB must ALWAYS be in the isolated backened network, and never directly rechable
       - backend
     volumes:
-      - ./dba_plugins:/usr/lib/mysql/plugin:rw
+      - ./dba_plugins:/usr/lib64/mysql/plugin:rw
 networks: 
   backend:
   frontend:
