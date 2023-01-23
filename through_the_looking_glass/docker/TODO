@@ -1,0 +1,5 @@
+dba_plugins/src should contain the UDF source
+containers/mysql shoudl contain a build setup that builds all the udf functions in the above folder, before copying them to the global plguin directory
+try to find a data masking UDF to use as an example why the DBa's have this access
+get https://github.com/mysqludf/lib_mysqludf_sys building for the current DB version, or downgrade the DB version (though may be hard to find a 5.1 Arm64 build ... heh)
+
