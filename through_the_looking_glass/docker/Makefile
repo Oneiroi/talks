@@ -4,6 +4,9 @@ certgen:
 	mv *.key ./cert &&\
 	mv *.crt ./cert)
 
+udf:
+	docker-compose build --build-arg BUILDTGT=lib_mysqludf_sys
+	
 build: certgen
 	docker-compose build
 up:

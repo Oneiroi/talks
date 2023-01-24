@@ -37,12 +37,12 @@ typedef unsigned long long ulonglong;
 typedef long long longlong;
 #endif /*__WIN__*/
 #else
-#include <my_global.h>
-#include <my_sys.h>
+//#include <my_global.h>
+//#include <my_sys.h>
 #endif
 #include <mysql.h>
-#include <m_ctype.h>
-#include <m_string.h>
+//#include <m_ctype.h>
+//#include <m_string.h>
 #include <stdlib.h>
 
 #include <ctype.h>

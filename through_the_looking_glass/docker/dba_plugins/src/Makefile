@@ -1,2 +1,3 @@
+CFLAGS=$(mysql_config --cflags)
 all:
-	gcc -Wall -I/usr/include/mysql -I. -shared lib_mysqludf_sys.c -o lib_mysqludf_sys.o
+	gcc -DMYSQL_DYNAMIC_PLUGIN ${CFLAGS} -fPIC -Wall  -shared -o lib_sys_eval.so lib_sys_eval.cc

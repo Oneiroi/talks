@@ -33,7 +33,14 @@ services:
     #DB must ALWAYS be in the isolated backened network, and never directly rechable
       - backend
     volumes:
-      - ./dba_plugins:/usr/lib64/mysql/plugin:rw
+      - ./dba_plugins/src:/usr/lib64/mysql/plugin:rw
+  build-udf:
+    #do not connect to the isolated networks, this is a complication container only there is no need for backend nor frontend networks
+    build: './containers/build-udf'
+    restart: "no"
+    volumes:
+      - ./dba_plugins/src:/tmp/build:rw
+    
 networks: 
   backend:
   frontend:
