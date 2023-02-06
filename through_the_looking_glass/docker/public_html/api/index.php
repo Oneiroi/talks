@@ -1,5 +1,5 @@
 <?PHP
-function addCC($_REQUEST){
+function addCC($v){
 	$testCase = array(
 		"name",
 		"address",
@@ -15,10 +15,9 @@ function addCC($_REQUEST){
 	//if the script has not reach die() condition above we can parse the data into the CHD DB Service
 	$conn = mysql_connect("docker-mysql-1",
 	"CHDApp",
-	"sacred22"
-	)
+	"sacred22");
 	if (!$conn) {
-		die("Failed to connect to CHD Database service, please review error logs")
+		die("Failed to connect to CHD Database service, please review error logs");
 	}
 }
 if(empty($_REQUEST['action'])) {
