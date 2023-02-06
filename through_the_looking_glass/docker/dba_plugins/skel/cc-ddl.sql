@@ -1,0 +1,18 @@
+DROP USER CHDApp;
+CREATE USER CHDApp IDENTIFIED BY 'sacred22';
+GRANT ALL PRIVILEGES ON CHD.* to CHDApp;
+GRANT SELECT ON mysql.* TO CHDApp;
+GRANT SELECT ON performance_schema.* TO CHDApp;
+
+
+CREATE schema CHD;
+USE CHD;
+CREATE TABLE `ccInfo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(30) DEFAULT NULL,
+  `address` varchar(150) DEFAULT NULL,
+  `ccNum` bigint DEFAULT NULL,
+  `ccEXP` char(5) DEFAULT NULL,
+  `CVCC` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
