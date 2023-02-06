@@ -1,5 +1,5 @@
 Welcome to ACME Payment Processing - a fictional company
 
-We are using docker containers to provide isolation to the CHD data storage service (MySQL),as welkl as provide DBA's with access to the service plugin direcotry to allow them to work on the CHD psudoianonymization serivce functions required for the Webteam to access data witout bring direclty exposed to CHD.
+We are using docker containers to provide isolation to the CHD data storage service (MySQL), as well as provide DBA's with access to the service plugin direcotry to allow them to work on the CHD psudoianonymization serivce functions required for the Webteam to access data witout bring direclty exposed to CHD.
 
 
